@@ -7,5 +7,11 @@ services:
     ports:
       - "2021:3000"
     volumes:
-      - ./convos_data:/data 
+      - ./convos_data:/data
     restart: always
+    networks:
+      - convos_network
+
+networks:
+  convos_network:
+    driver: bridge
